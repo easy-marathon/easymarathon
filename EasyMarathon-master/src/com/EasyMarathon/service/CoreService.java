@@ -61,6 +61,7 @@ public class CoreService {
 				}
 				// 自定义菜单点击事件
 				else if (eventType.equals(MessageUtil.EVENT_TYPE_CLICK)) {
+					System.out.println("123456");
 					// 事件KEY值，与创建菜单时的key值对应
 					String eventKey = requestMap.get("EventKey");
 					// 根据key值判断用户点击的按钮
@@ -159,11 +160,13 @@ public class CoreService {
 			}
 			// 当用户发消息时
 			else if (msgType.equals(MessageUtil.REQ_MESSAGE_TYPE_TEXT)) {
+				System.out.println("zzbb");
 				String ss = requestMap.get("Content");
 				Integer eventID = null;
 				try {
 					eventID = Integer.parseInt(ss);
 					int aID = AthleteService.findAthlete(fromUserName, eventID);
+					System.out.println("zzmm");
 					ArrayList<EventBean> events = AthleteService.GetEvents();
 					boolean flag = false;
 					for (EventBean s : events) {

@@ -7,6 +7,7 @@ import com.EasyMarathon.bean.GongzhonghaoInfo;
 import com.EasyMarathon.bean.Token;
 import com.EasyMarathon.util.CommonUtil;
 import com.EasyMarathon.util.MenuUtil;
+import java.net.URLEncoder;
 
 /**
  * 菜单管理器类
@@ -29,8 +30,8 @@ public class MenuManager
 				"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 				+ GongzhonghaoInfo.appID+"&"
 						+ "redirect_uri="
-						+ GongzhonghaoInfo.URL
-						+ "oauthServlet&response_type=code&"
+						+ URLEncoder.encode(GongzhonghaoInfo.URL + "oauthServlet") 
+						+ "&response_type=code&"
 						+ "scope=snsapi_userinfo&state=STATE#wechat_redirect");
 		//http://7891556.cn/easyrun/
 		ViewButton btn12 = new ViewButton();
@@ -40,8 +41,8 @@ public class MenuManager
 				"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 				+ GongzhonghaoInfo.appID+"&"
 						+ "redirect_uri="
-						+ GongzhonghaoInfo.URL
-						+ "ShoppingServlet&response_type=code&"
+						+ URLEncoder.encode(GongzhonghaoInfo.URL + "ShoppingServlet") 
+						+ "&response_type=code&"
 						+ "scope=snsapi_userinfo&state=STATE#wechat_redirect");
 
 		ViewButton btn13 = new ViewButton();
@@ -51,8 +52,8 @@ public class MenuManager
 				"https://open.weixin.qq.com/connect/oauth2/authorize?appid="
 				+ GongzhonghaoInfo.appID+"&"
 						+ "redirect_uri="
-						+ GongzhonghaoInfo.URL
-						+ "MarathonRegisterServlet&response_type=code&"
+						+ URLEncoder.encode(GongzhonghaoInfo.URL + "MarathonRegisterServlet") 
+						+ "&response_type=code&"
 						+ "scope=snsapi_userinfo&state=STATE#wechat_redirect");
 		
 		ClickButton btn21 = new ClickButton();
@@ -110,6 +111,7 @@ public class MenuManager
 
 			// 判断菜单创建结果
 			if (result)
+				
 			{
 				System.out.println("菜单创建成功！");
 				log.info("菜单创建成功！");

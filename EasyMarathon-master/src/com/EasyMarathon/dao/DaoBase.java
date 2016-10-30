@@ -14,6 +14,7 @@ public class DaoBase
 	
 	public static Connection getConnection(boolean auto)
 	{
+		
 		try
 		{
 			Connection conn = cpds.getConnection();
