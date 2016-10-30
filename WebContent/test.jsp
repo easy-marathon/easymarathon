@@ -29,6 +29,7 @@
       <div class="col-sm-4 col-sm-offset-4">
         <div class="text-center m-b-lg"><br><br>
           <h1>热门话题</h1>
+	  <h2>light test</h2>
           <label style="color:#ff6633">11</label>
           <br>
         </div>
